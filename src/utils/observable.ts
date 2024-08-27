@@ -15,6 +15,6 @@ export class Observable<TData> {
   }
 
   dismissAll() {
-    this.notify(null as any);
+    this.notify(null as TData);
   }
 }

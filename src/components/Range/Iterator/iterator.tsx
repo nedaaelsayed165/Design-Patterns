@@ -10,7 +10,7 @@ export class RangeIterator implements Iterator<number> {
     }
 
     public next(): IteratorResult<number> {
-        if (this.current < this.end) {
+        if ((this.step > 0 && this.current < this.end) || (this.step < 0 && this.current > this.end)) {
             const value = this.current;
             this.current += this.step;
             return { value, done: false };
@@ -23,8 +23,3 @@ export class RangeIterator implements Iterator<number> {
         return this;
     }
 }
-
-export function range(start: number, end: number, step: number): Iterable<number> {
-    return new RangeIterator(start, end, step);
-}
-

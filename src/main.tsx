@@ -2,7 +2,7 @@ import React from 'react'
 import ReactDOM from 'react-dom/client'
 import App from './App.tsx'
 import './index.css'
-import { range } from './components/Range/iterator'
+import { range } from './components/Range/Generator/generator'
 
 console.log('Iterator function:')
 for (const value of range(0, 10, 1)) {
